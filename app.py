@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from pyzbar.pyzbar import decode
 from PIL import Image
+import os
 
 app = Flask(__name__)
 
@@ -16,6 +17,9 @@ def scan():
     # Decode the QR code
     img = Image.open(file)
     qr_data = decode(img)[0].data.decode()
+
+    # Save the scanned QR code image to the static folder
+    img.save(os.path.join(app.static_folder, 'qr_code.png'))
 
     print("qr_data:", qr_data)
 

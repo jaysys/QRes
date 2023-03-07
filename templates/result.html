@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>QR Code Scanner Results</title>
+    <title>QR Code Scanner Results</title>
 </head>
 <body>
-	<h1>QR Code Scanner Results</h1>
-	<p>The QR code data is:</p>
-	<pre>{{ qr_data }}</pre>
+    <h1>QR Code Scanner Results</h1>
+    <p>The QR code data is:</p>
+	<br>
+    <pre>{{ qr_data }}</pre>
+    <img src="{{ url_for('static', filename='qr_code.png') }}" alt="QR Code">
 </body>
 </html>

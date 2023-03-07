@@ -1,0 +1,2 @@
+# qres
+QR gen/read

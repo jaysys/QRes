@@ -6,6 +6,8 @@ import qrcode
 import base64
 import codecs
 from io import BytesIO
+import cv2
+import numpy as np
 
 app = Flask(__name__)
 
@@ -33,8 +35,6 @@ def gen():
         return render_template('gen.html', input_text=input_text, img_data=img_data)
     else:
         return render_template('gen.html')
-
-
 
 @app.route('/scan', methods=['POST'])
 def scan():

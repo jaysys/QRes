@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Reader</title>
+</head>
+<body>
+    <h1>QR Code Reader</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <label for="qr_image">Upload an image:</label>
+        <br>
+        <input type="file" id="qr_image" name="qr_image">
+        <br><br>
+        <input type="submit" value="Decode QR Code">
+    </form>
+    {% if qr_text %}
+        <br><br>
+        <p>QR code data:</p>
+        <pre>{{ qr_text }}</pre>
+    {% endif %}
+    {% if error %}
+        <br><br>
+        <p>Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
+

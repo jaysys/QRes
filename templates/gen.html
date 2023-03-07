@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <form method="POST" action="/gen">
+        <label for="input_text">Input text:</label>
+        <input type="text" id="input_text" name="input_text">
+        <br><br>
+        <input type="submit" value="Generate QR Code">
+    </form>
+    {% if img_data %}
+        <br><br>
+        <!-- <img src="{{ img_data }}" alt="QR Code"> -->
+        <img src="data:image/png;base64,{{ img_data }}" alt="QR Code">
+
+    {% endif %}
+</body>
+</html>
